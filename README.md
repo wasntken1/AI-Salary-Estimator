@@ -45,10 +45,10 @@ Bagi penguji atau pengguna yang ingin menjalankan aplikasi ini secara lokal, iku
 2. Buka `http://localhost/phpmyadmin`.
 3. Buat database baru bernama `db_projekuas`.
 4. jalankan query 
-
+```sql
 USE db_projekuas;
 
--- 3. Membuat Tabel Akun Pengguna (Untuk Syarat Login & Register)
+-- Membuat Tabel Akun Pengguna (Untuk Syarat Login & Register)
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -56,23 +56,23 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- 4. Membuat Tabel Riwayat Prediksi AI (Untuk Syarat CRUD & RecyclerView)
+-- Membuat Tabel Riwayat Prediksi AI (Untuk Syarat CRUD & RecyclerView)
 CREATE TABLE history_prediksi (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    ipk DECIMAL(3,2) NOT NULL,           -- Format desimal misal: 3.85
+    ipk DECIMAL(3,2) NOT NULL,           
     tier_kampus INT NOT NULL,
-    skor_koding DECIMAL(5,2) NOT NULL,   -- Format desimal misal: 85.50
+    skor_koding DECIMAL(5,2) NOT NULL,   
     tipe_perusahaan VARCHAR(50) NOT NULL,
     posisi VARCHAR(50) NOT NULL,
-    hasil_gaji VARCHAR(100) NOT NULL,    -- Menyimpan teks hasil dari Python (misal: "Rp 7.500.000")
-    catatan TEXT,                        -- Fitur krusial untuk syarat "UPDATE" (Bisa diedit oleh user)
+    hasil_gaji VARCHAR(100) NOT NULL,    
+    catatan TEXT,                        
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     
     -- Menghubungkan riwayat dengan pemilik akun (Relasi Database)
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
-
+```
 ### 2. Konfigurasi Backend (PHP & Flask)
 1. Pindahkan folder `Connect Database` di Folder Backend ke dalam direktori `C:\xampp\htdocs\`.
 2. Buka *terminal* atau *command prompt*, arahkan ke folder `Rest API` di folder Backed.
