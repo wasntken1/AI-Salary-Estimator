@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F2F5">
+
+    <TextView
+        android:id="@+id/tvHeaderHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Riwayat Prediksi AI"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1A365D"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="2dp"/>
+
+    <EditText
+        android:id="@+id/etSearchHistory"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/tvHeaderHistory"
+        android:layout_margin="16dp"
+        android:background="#FFFFFF"
+        android:hint="🔍 Cari posisi atau perusahaan..."
+        android:padding="12dp"
+        android:elevation="2dp"
+        android:inputType="text"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/etSearchHistory"
+        android:clipToPadding="false"/>
+
+    <TextView
+        android:id="@+id/tvEmptyHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Belum ada riwayat.\nSilakan jalankan prediksi AI terlebih dahulu."
+        android:textAlignment="center"
+        android:textColor="#718096"
+        android:textSize="16sp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F2F5"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI Salary Estimator"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#1A365D"
+            android:letterSpacing="0.02"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Leverage the power of Machine Learning to predict your estimated starting salary. Input your academic and technical qualifications below to receive a data-driven career valuation."
+            android:textSize="14sp"
+            android:textColor="#4A5568"
+            android:gravity="center"
+            android:lineSpacingExtra="6dp"
+            android:paddingHorizontal="12dp"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IPK Terakhir (Skala 4.0):"
+            android:textStyle="bold"
+            android:textColor="#2D3748"
+            android:layout_marginBottom="6dp"/>
+        <EditText
+            android:id="@+id/etCgpa"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Contoh: 3.85"
+            android:inputType="numberDecimal"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level Universitas (College Tier):"
+            android:textStyle="bold"
+            android:textColor="#2D3748"
+            android:layout_marginBottom="6dp"/>
+        <Spinner
+            android:id="@+id/spinnerTier"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skor Kemampuan Koding (0 - 100):"
+            android:textStyle="bold"
+            android:textColor="#2D3748"
+            android:layout_marginBottom="6dp"/>
+        <EditText
+            android:id="@+id/etCoding"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Contoh: 85.5"
+            android:inputType="numberDecimal"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target Tipe Perusahaan:"
+            android:textStyle="bold"
+            android:textColor="#2D3748"
+            android:layout_marginBottom="6dp"/>
+        <Spinner
+            android:id="@+id/spinnerCompany"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posisi Pekerjaan (Job Role):"
+            android:textStyle="bold"
+            android:textColor="#2D3748"
+            android:layout_marginBottom="6dp"/>
+        <Spinner
+            android:id="@+id/spinnerRole"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/btnPredict"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Jalankan Prediksi AI"
+            android:backgroundTint="#1A365D"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#276749"
+            android:gravity="center"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="40dp"/>
+
+    </LinearLayout>
+</ScrollView>

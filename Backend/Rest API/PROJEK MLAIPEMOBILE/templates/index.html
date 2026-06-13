@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Salary Estimator | Projek UAS</title>
+    <style>
+        /* Pengaturan Variabel Warna */
+        :root {
+            --primary-color: #1A365D;
+            --secondary-color: #2B6CB0;
+            --accent-color: #38A169;
+            --bg-color: #F4F7F6;
+            --text-color: #2D3748;
+            --card-bg: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Bagian Header (Hero Section) */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+        .header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 10px auto 0; }
+
+        /* Tata Letak Dua Kolom */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Desain Kartu (Card) */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 12px;
+            font-size: 1.5rem;
+        }
+
+        /* Kolom Kiri: Penjelasan Akademik */
+        .info-section h3 { color: var(--secondary-color); margin-bottom: 5px; font-size: 1.1rem; margin-top: 25px;}
+        .info-section p, .info-section ul { font-size: 0.95rem; color: #4A5568; text-align: justify; }
+        .info-section ul { padding-left: 20px; }
+        .info-section li { margin-bottom: 10px; }
+        
+        /* Tag Teknologi */
+        .badge {
+            display: inline-block; background: #EDF2F7; padding: 6px 12px;
+            border-radius: 20px; font-size: 0.8rem; color: var(--primary-color);
+            font-weight: 600; margin-right: 5px; margin-top: 15px;
+        }
+
+        /* Kolom Kanan: Desain Form */
+        label { font-weight: 600; display: block; margin-bottom: 6px; color: #4A5568; font-size: 0.9rem; }
+        input, select {
+            width: 100%; margin-bottom: 20px; padding: 12px 15px; border-radius: 8px;
+            border: 1px solid #CBD5E0; box-sizing: border-box; font-size: 1rem;
+            background-color: #F8FAFC; transition: border 0.3s, box-shadow 0.3s;
+        }
+        input:focus, select:focus {
+            border-color: var(--secondary-color); outline: none; background-color: #FFF;
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+        }
+        
+        button {
+            width: 100%; background-color: var(--accent-color); color: white;
+            border: none; cursor: pointer; font-weight: bold; font-size: 1.1rem;
+            padding: 14px; border-radius: 8px; transition: background 0.3s, transform 0.1s;
+            margin-top: 10px;
+        }
+        button:hover { background-color: #2F855A; }
+        button:active { transform: scale(0.98); }
+        
+        /* Kotak Hasil Prediksi */
+        .box-hasil {
+            background: linear-gradient(to right, #F0FFF4, #C6F6D5);
+            border-left: 6px solid var(--accent-color); padding: 25px 20px;
+            border-radius: 8px; margin-top: 25px; text-align: center;
+        }
+        .title-hasil { font-size: 1rem; color: #2F855A; margin: 0; font-weight: 600; }
+        .nominal-gaji { font-size: 2.2rem; color: #22543D; font-weight: bold; margin: 10px 0; }
+        .info-tambahan { font-size: 0.9rem; color: #4A5568; margin: 0; }
+
+        /* Mode HP (Responsif Layar Kecil) */
+        @media (max-width: 850px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>AI Salary Estimator</h1>
+        <p>Sistem Prediksi Nilai Tawar Karir Mahasiswa Berbasis Machine Learning</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="card info-section">
+            <h2>Tentang Proyek AI</h2>
+            
+            <h3>Tujuan Aplikasi</h3>
+            <p>Aplikasi web ini dirancang untuk menaksir estimasi gaji awal (<i>Fresh Graduate</i>) lulusan IT/Sains yang beralih ke ranah teknologi. Kecerdasan Buatan (AI) menilai kandidat berdasarkan kompetensi portofolio dan menyeimbangkannya dengan standar ekonomi lokal di Indonesia.</p>
+
+            <h3>Arsitektur Model (Linear Regression)</h3>
+            <p>Otak dari sistem ini menggunakan algoritma <strong>Linear Regression</strong> (Regresi Linear). Metode prediksi <i>Machine Learning</i> ini dipilih karena sifatnya yang transparan dalam memetakan hubungan kausalitas (sebab-akibat) antara metrik akademik secara langsung terhadap taksiran gaji numerik.</p>
+            
+            <h3>Proses Training Model</h3>
+            <ul>
+                <li><strong>Data Mining:</strong> Menggunakan <i>dataset</i> profil rekrutmen elite berisi 9.000 sampel lulusan universitas global.</li>
+                <li><strong>Pre-processing:</strong> Filter mahasiswa yang diterima kerja dan penerapan <i>One-Hot Encoding</i> pada kolom kategorikal (perusahaan dan jabatan).</li>
+                <li><strong>Feature Selection:</strong> Demi mencegah <i>overfitting</i>, AI dirampingkan untuk hanya berfokus pada 5 fitur paling krusial: IPK, Level Kampus, Skor Koding, Tipe Perusahaan, dan Posisi.</li>
+                <li><strong>Evaluasi Metrik:</strong> Menggunakan proporsi pemisahan data 80:20 (<i>Train-Test Split</i>), model berhasil mempertahankan tingkat akurasi (<i>R² Score</i>) sebesar <strong>83.13%</strong>.</li>
+            </ul>
+
+            <div style="margin-top: 20px;">
+                <span class="badge">Python</span>
+                <span class="badge">Flask</span>
+                <span class="badge">Scikit-Learn</span>
+                <span class="badge">Pandas</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Uji Coba Model</h2>
+            <form method="POST">
+                
+                <label>IPK Terakhir (Skala 4.0):</label>
+                <input type="number" step="0.01" min="0" max="4" name="cgpa" required placeholder="Contoh: 3.85">
+
+                <label>Level Universitas (College Tier):</label>
+                <select name="college_tier">
+                    <option value="1">Tier 1 (Kampus Top Elite / Nasional)</option>
+                    <option value="2">Tier 2 (Kampus Menengah / Regional)</option>
+                    <option value="3">Tier 3 (Kampus Berkembang)</option>
+                </select>
+
+                <label>Skor Kemampuan Koding (0 - 100):</label>
+                <input type="number" step="0.1" min="0" max="100" name="coding_score" required placeholder="Contoh: 85.5">
+
+                <label>Target Tipe Perusahaan:</label>
+                <select name="company_type">
+                    <option value="MNC">MNC (Multi-National Corporation)</option>
+                    <option value="Top Tech">Top Tech Company</option>
+                    <option value="Mid-size">Mid-size Company</option>
+                    <option value="Startup">Startup</option>
+                </select>
+
+                <label>Posisi Pekerjaan (Job Role):</label>
+                <select name="job_role">
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Data Scientist">Data Scientist</option>
+                    <option value="Web Developer">Web Developer</option>
+                    <option value="Business Analyst">Analis Bisnis / Spesialis Lainnya</option>
+                </select>
+
+                <button type="submit">Jalankan Prediksi AI</button>
+            </form>
+
+            {% if hasil_bulan %}
+                <div class="box-hasil">
+                    <p class="title-hasil">Estimasi Gaji Bulanan (Lokal):</p>
+                    <p class="nominal-gaji">{{ hasil_bulan }}</p>
+                    <p class="info-tambahan">Estimasi Tahunan: <strong>{{ hasil_tahun }}</strong></p>
+                </div>
+            {% endif %}
+        </div>
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F2F5"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="20dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tentang Proyek"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#1A365D"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tujuan Aplikasi"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#2B6CB0"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aplikasi mobile native ini dirancang untuk menaksir estimasi gaji awal di ranah teknologi. Sistem memadukan antarmuka Android yang intuitif dengan Machine Learning di sisi backend untuk memberikan valuasi karier berbasis data."
+            android:textSize="14sp"
+            android:textColor="#4A5568"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arsitektur Model (AI)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#2B6CB0"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menggunakan algoritma Linear Regression dari Scikit-Learn. Model ini dilatih menggunakan 9.000 sampel data rekrutmen global, melalui tahap One-Hot Encoding, dan difokuskan pada 5 fitur krusial. Model berhasil mempertahankan tingkat akurasi (R² Score) sebesar 83.13%."
+            android:textSize="14sp"
+            android:textColor="#4A5568"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arsitektur Mobile &amp; Alur Kerja"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#2B6CB0"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Retrofit API: Bertindak sebagai jembatan komunikasi asinkron (REST API) yang menyalurkan input pengguna ke server Flask (Port 5000) dan menembak data riwayat ke MySQL (XAMPP).\n\n• RecyclerView &amp; Adapter: Direkayasa untuk merender kartu riwayat secara dinamis, dilengkapi dengan algoritma Client-Side Filtering untuk fitur pencarian real-time.\n\n• Glide Library: Mengoptimalkan pemuatan dan pemotongan (circle-crop) gambar profil dari penyimpanan lokal tanpa membebani memori utama (mencegah memory leak).\n\n• Shared Preferences: Mengelola manajemen sesi pengguna secara aman dari login hingga logout."
+            android:textSize="14sp"
+            android:textColor="#4A5568"
+            android:lineSpacingExtra="6dp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tech Stack: Java | Python | Flask | MySQL"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="#A0AEC0"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+</ScrollView>
