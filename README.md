@@ -81,7 +81,11 @@ CREATE TABLE history_prediksi (
 4. Jalankan server Machine Learning dengan perintah: 
    `python app.py` (Server akan berjalan di port 5000).
 
-### 3. Konfigurasi Frontend (Android Studio)
+### 4. Konfigurasi Frontend (Web)
+1. Buka Browser di device yang sama dengan python app.py
+2. Masuk ke URL yang di reply Flask di vscode
+
+### 5. Konfigurasi Frontend (Android Studio)
 1. Buka folder `projekuas` di Folder Android Studio menggunakan Android Studio.
 2. Buka file `DbClient.java` dan `ApiClient.java`.
 3. Ubah **Base URL** dengan *IP Address* lokal komputer Anda (contoh: `http://192.168.1.5/backend_php/` dan `http://192.168.1.5:5000/`).
